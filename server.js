@@ -28,12 +28,6 @@ app.use(helmet.hidePoweredBy({setTo: 'PHP 4.2.0'}))
 // MongoDB config
 const db = process.env.DB;
 
-console.log('Db url: ' + db);
-mongoose
-  .connect(db, {useNewUrlParser: true})
-  .then(() => console.log('connected'))
-  .catch(err => console.log(err))
-
 //Index page (static HTML)
 app.route('/')
   .get(function (req, res) {
